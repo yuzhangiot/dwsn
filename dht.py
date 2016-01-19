@@ -25,7 +25,10 @@ class Btsniff:
         self.ses.add_dht_router("router.utorrent.com", 6881)
         self.ses.add_dht_router("router.bitcomet.com", 6881)
 
-        info = lt.torrent_info(torrent_file)
+        e = lt.bdecode(open(torrent_file, 'rb').read())
+        info = lt.torrent_info(e)
+
+        # info = lt.torrent_info(torrent_file)
         h = self.ses.add_torrent({'ti': info, 'save_path': './'})
 
         while not h.is_seed():
