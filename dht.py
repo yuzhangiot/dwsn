@@ -96,4 +96,4 @@ if __name__ == '__main__':
     torrent_file = sys.argv[1]
 
     btsniff = Btsniff()
-    btsniff.start(torrent_file)
+    # btsniff.start(torrent_file)
